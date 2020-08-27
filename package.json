@@ -1,0 +1,38 @@
+{
+  "name": "mern-vm",
+  "version": "1.0.0",
+  "description": "mern stack",
+  "main": "app.js",
+  "scripts": {
+    "stat": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kejno/mern-vm.git"
+  },
+  "keywords": [
+    "mern",
+    "node",
+    "express",
+    "js"
+  ],
+  "author": "Artem Rimarchyk <1patrik@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kejno/mern-vm/issues"
+  },
+  "homepage": "https://github.com/Kejno/mern-vm#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
