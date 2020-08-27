@@ -7,8 +7,6 @@ const bcrypt = require('bcryptjs')
 const User = require('../models/User')
 const router = Router()
 
-
-
 // /api/auth/register
 router.post(
     '/register',
@@ -24,7 +22,7 @@ router.post(
             if (!errors.isEmpty()) {
                 return res.status(400).json({
                     errors: errors.array(),
-                    message: "Не корректные данныепри регистрации"
+                    message: "Не корректные данные при регистрации"
                 })
             }
 
@@ -54,7 +52,8 @@ router.post(
     })
 
 // /api/auth/login
-router.post('/login',
+router.post(
+    '/login',
     [
         check('email', 'Введите нормальный email').normalizeEmail().isEmail(),
         check('password', 'Введите пароль').exists
