@@ -1,9 +1,9 @@
 const { Router } = require('express')
-const jwt = require('jsonwebtoken')
-const config = require('config')
-const { check, validationResult } = require('express-validator')
 //для шифрования пароля юзера
 const bcrypt = require('bcryptjs')
+const config = require('config')
+const jwt = require('jsonwebtoken')
+const { check, validationResult } = require('express-validator')
 const User = require('../models/User')
 const router = Router()
 
@@ -33,7 +33,7 @@ router.post(
             const candidate = await User.findOne({ email })
 
             if (candidate) {
-                return res.status(400).json({ message: 'Такою пользователь существует' })
+                return res.status(400).json({ message: 'Такой пользователь существует' })
             }
 
             //password - пароль из фронтенда
@@ -56,7 +56,7 @@ router.post(
     '/login',
     [
         check('email', 'Введите нормальный email').normalizeEmail().isEmail(),
-        check('password', 'Введите пароль').exists
+        check('password', 'Введите пароль').exists()
     ],
     async (req, res) => {
 
@@ -75,7 +75,7 @@ router.post(
             const user = await User.findOne({ email })
 
             if (!user) {
-                return res.status.json({ message: "Пользователь не найден" })
+                return res.status(400).json({ message: "Пользователь не найден" })
             }
 
             const isMatch = await bcrypt.compare(password, user.password)

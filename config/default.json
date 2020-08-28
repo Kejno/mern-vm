@@ -1,5 +1,6 @@
 {
     "port": 5000,
     "jwtSecret": "artem rimarchyk",
-    "mongoUri": "mongodb+srv://artem:13572468@cluster0.1hmxt.azure.mongodb.net/app?retryWrites=true&w=majority"
+    "mongoUri": "mongodb+srv://artem:13572468@cluster0.1hmxt.azure.mongodb.net/app?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:5000"
 }
